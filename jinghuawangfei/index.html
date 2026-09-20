@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="警花王菲个人资料、从警经历、警务工作风采展示及相关社会活动报道。了解这位优秀女警官的职业故事与工作日常。">
+    <meta name="keywords" content="警花王菲,女警官,警察,警务风采,王菲警官">
+    <title>警花王菲-优秀女警风采展示与从警纪实</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #003366; /* 深蓝 - 警队/官方 */
+            --accent-color: #ffcc00; /* 金黄 - 勋章/荣誉 */
+            --text-dark: #333333;
+            --text-gray: #666666;
+            --bg-light: #f4f7f9;
+            --white: #ffffff;
+            --border-radius: 8px;
+            --container-width: 1200px;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* 布局容器 */
+        .container {
+            width: 100%;
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 顶部导航 */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-dark);
+            transition: var(--transition);
+            font-size: 16px;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        /* Hero 区域 */
+        .hero {
+            position: relative;
+            height: 500px;
+            background: linear-gradient(rgba(0, 51, 102, 0.7), rgba(0, 51, 102, 0.5)), url('https://picsum.photos/seed/police1/1920/1080') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            color: var(--white);
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            font-weight: bold;
+            border-radius: 4px;
+            transition: var(--transition);
+        }
+
+        .btn:hover {
+            background-color: #e6b800;
+            transform: translateY(-2px);
+        }
+
+        /* 通用 Section */
+        section {
+            padding: 60px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 32px;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-color);
+            margin: 10px auto 0;
+        }
+
+        .section-header p {
+            color: var(--text-gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* 个人简介 */
+        .profile-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 40px;
+            background: var(--white);
+            padding: 40px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+
+        .profile-img {
+            width: 100%;
+            border-radius: var(--border-radius);
+            object-fit: cover;
+            aspect-ratio: 3/4;
+        }
+
+        .profile-info h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .profile-tags {
+            margin: 20px 0;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: #eef4fa;
+            color: var(--primary-color);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+
+        .profile-text {
+            color: var(--text-gray);
+            margin-bottom: 20px;
+        }
+
+        /* 工作风采 */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: var(--transition);
+        }
+
+        .gallery-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .gallery-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .gallery-content {
+            padding: 20px;
+        }
+
+        .gallery-content h4 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+        }
+
+        .gallery-content p {
+            font-size: 14px;
+            color: var(--text-gray);
+            line-height: 1.5;
+        }
+
+        /* 经历时间轴 */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: #e0e0e0;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: -10px;
+            background-color: var(--white);
+            border: 4px solid var(--accent-color);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .left {
+            left: 0;
+        }
+
+        .right {
+            left: 50%;
+        }
+
+        .right::after {
+            left: -10px;
+        }
+
+        .content-box {
+            padding: 20px 30px;
+            background-color: var(--white);
+            position: relative;
+            border-radius: 6px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .content-box h4 {
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .date {
+            font-size: 14px;
+            color: var(--text-gray);
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        /* 联系方式 */
+        .contact-section {
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: #002244;
+            color: #8899aa;
+            padding: 40px 0;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        /* 响应式设计 */
+        @media screen and (max-width: 768px) {
+            .nav-wrapper {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+            }
+
+            nav ul {
+                margin-top: 15px;
+                gap: 15px;
+                font-size: 14px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .profile-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline::after {
+                left: 31px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+
+            .timeline-item::after {
+                left: 21px;
+            }
+
+            .left::after, .right::after {
+                left: 21px;
+            }
+
+            .right {
+                left: 0%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 顶部导航 -->
+    <header>
+        <div class="container nav-wrapper">
+            <div class="logo">
+                <span>◆</span> 警花王菲
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home" class="active">首页</a></li>
+                    <li><a href="#profile">个人简介</a></li>
+                    <li><a href="#work">工作风采</a></li>
+                    <li><a href="#experience">从警经历</a></li>
+                    <li><a href="#contact">联系我们</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 首屏 Hero -->
+    <section id="home" class="hero">
+        <div class="container hero-content">
+            <h1>铁骨柔情，守护平安</h1>
+            <p>记录警花王菲在公安一线的奋斗足迹，展现新时代女警的责任与担当。</p>
+            <a href="#profile" class="btn">了解更多</a>
+        </div>
+    </section>
+
+    <!-- 个人简介 -->
+    <section id="profile">
+        <div class="container">
+            <div class="section-header">
+                <h2>关于王菲</h2>
+                <p>一位扎根基层的公安干警，用行动诠释着“人民公安为人民”的庄严承诺。</p>
+            </div>
+            <div class="profile-grid">
+                <img src="https://picsum.photos/seed/police_woman/400/600" alt="警花王菲照片" class="profile-img">
+                <div class="profile-info">
+                    <h3>王菲</h3>
+                    <p class="profile-text">现任某市公安局治安大队民警。自警校毕业以来，始终坚守在公安工作第一线。她不仅具备过硬的业务素质，更拥有细腻的人文关怀，在打击犯罪与服务群众之间架起了一座桥梁。</p>
+                    <div class="profile-tags">
+                        <span class="tag">治安管理</span>
+                        <span class="tag">社区警务</span>
+                        <span class="tag">优秀公务员</span>
+                        <span class="tag">法制宣传</span>
+                    </div>
+                    <p><strong>从警格数：</strong> 8年</p>
+                    <p><strong>荣誉：</strong> 2022年度全市“巾帼建功”标兵</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 工作风采 -->
+    <section id="work" style="background-color: #fff;">
+        <div class="container">
+            <div class="section-header">
+                <h2>工作风采</h2>
+                <p>镜头下的日常，展现她雷厉风行与温柔细致并存的职业形象。</p>
+            </div>
+            <div class="gallery-grid">
+                <article class="gallery-card">
+                    <img src="https://picsum.photos/seed/police_work1/400/300" alt="夜间巡逻" class="gallery-img">
+                    <div class="gallery-content">
+                        <h4>夜间巡逻</h4>
+                        <p>无论严寒酷暑，坚持开展辖区常态化巡逻，提高见警率，增强群众安全感。</p>
+                    </div>
+                </article>
+                <article class="gallery-card">
+                    <img src="https://picsum.photos/seed/police_work2/400/300" alt="便民服务" class="gallery-img">
+                    <div class="gallery-content">
+                        <h4>便民服务</h4>
+                        <p>在社区窗口耐心为群众办理证件，解答各类法律咨询，用微笑化解矛盾。</p>
+                    </div>
+                </article>
+                <article class="gallery-card">
+                    <img src="https://picsum.photos/seed/police_work3/400/300" alt="反诈宣传" class="gallery-img">
+                    <div class="gallery-content">
+                        <h4>反诈宣传</h4>
+                        <p>深入学校和企业开展防范电信诈骗讲座，守护百姓的“钱袋子”。</p>
+                    </div>
+                </article>
+                <article class="gallery-card">
+                    <img src="https://picsum.photos/seed/police_work4/400/300" alt="案件侦办" class="gallery-img">
+                    <div class="gallery-content">
+                        <h4>案件侦办</h4>
+                        <p>在办案区严格依法依规办案，维护法律尊严，确保案件办理的每一个环节都经得起检验。</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- 从警经历 -->
+    <section id="experience">
+        <div class="container">
+            <div class="section-header">
+                <h2>从警经历</h2>
+                <p>时光荏苒，从警校学员到业务骨干，每一步都走得坚实有力。</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item left">
+                    <div class="content-box">
+                        <span class="date">2015年</span>
+                        <h4>初入警营</h4>
+                        <p>毕业于中国人民警察大学，分配至市局治安支队，开始基层民警生涯。</p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="content-box">
+                        <span class="date">2017年</span>
+                        <h4>基层锻炼</h4>
+                        <p>主动申请下沉至基层派出所，负责社区警务工作，积累了丰富的群众工作经验。</p>
+                    </div>
+                </div>
+                <div class="timeline-item left">
+                    <div class="content-box">
+                        <span class="date">2020年</span>
+                        <h4>专案攻坚</h4>
+                        <p>参与重大专项行动，在复杂案件侦办中表现突出，获得集体嘉奖。</p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="content-box">
+                        <span class="date">2023年</span>
+                        <h4>业务骨干</h4>
+                        <p>担任治安大队内勤及业务指导员，负责全局法制宣传与内务管理工作。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系方式 -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2>联系与合作</h2>
+            <p style="margin-bottom: 30px; opacity: 0.9;">欢迎关注警务工作，如有相关采访需求或工作咨询，请通过以下方式联系。</p>
+            <div class="contact-info">
+                <div class="info-item">
+                    <span>📞</span> 0XX-XXXXXXX
+                </div>
+                <div class="info-item">
+                    <span>📧</span> contact@police-wangfei.com
+                </div>
+                <div class="info-item">
+                    <span>📍</span> XX市公安局治安支队
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 警花王菲警务风采展示平台 版权所有</p>
+            <p>本页面仅用于展示优秀警务人员形象，所有内容均为公开报道信息。</p>
+        </div>
+    </footer>
+
+    <script>
+        // 简单的平滑滚动脚本
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // 导航栏滚动效果
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.boxShadow = "0 4px 15px rgba(0,0,0,0.1)";
+            } else {
+                header.style.boxShadow = "0 2px 10px rgba(0,0,0,0.05)";
+            }
+        });
+    </script>
+</body>
+</html>
