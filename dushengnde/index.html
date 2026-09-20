@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="独生女的故事 - 汇集关于独生子女家庭、成长经历、亲情故事与情感共鸣的原创内容平台，探讨独生子女的独特视角与生活感悟。">
+    <meta name="keywords" content="独生女的故事, 独生子女, 家庭故事, 成长感悟, 亲情, 单亲家庭, 独生子女心理">
+    <title>独生女的故事 - 成长感悟与亲情故事分享平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #8e44ad;
+            --secondary-color: #f39c12;
+            --bg-color: #fdfbf7;
+            --card-bg: #ffffff;
+            --text-main: #2c3e50;
+            --text-light: #7f8c8d;
+            --border-radius: 12px;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .search-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 20px;
+            color: var(--text-main);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+            padding: 60px 0;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 16px;
+            color: var(--text-main);
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Main Grid Layout */
+        .main-content {
+            display: grid;
+            grid-template-columns: 2.5fr 1fr;
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        /* Featured Section */
+        .featured-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            margin-bottom: 30px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .featured-image {
+            width: 100%;
+            height: 400px;
+            background-color: #ddd;
+            background-image: url('https://picsum.photos/seed/parenting/800/400.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .featured-content {
+            padding: 30px;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #f3e5f5;
+            color: var(--primary-color);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .featured-content h2 {
+            font-size: 28px;
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+
+        .featured-content p {
+            color: var(--text-light);
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .read-more {
+            color: var(--primary-color);
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* Article List */
+        .section-title {
+            font-size: 22px;
+            margin-bottom: 20px;
+            padding-left: 15px;
+            border-left: 4px solid var(--primary-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .article-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .article-item {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            box-shadow: var(--shadow);
+            display: flex;
+            gap: 20px;
+            transition: transform 0.2s;
+        }
+
+        .article-item:hover {
+            transform: translateY(-2px);
+        }
+
+        .article-thumb {
+            width: 120px;
+            height: 90px;
+            border-radius: 8px;
+            background-color: #eee;
+            background-size: cover;
+            background-position: center;
+            flex-shrink: 0;
+        }
+
+        .article-info {
+            flex: 1;
+        }
+
+        .article-info h3 {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .article-meta {
+            font-size: 12px;
+            color: var(--text-light);
+            margin-bottom: 10px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .article-excerpt {
+            font-size: 14px;
+            color: #666;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        /* Sidebar */
+        aside {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .widget {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 25px;
+            box-shadow: var(--shadow);
+        }
+
+        .widget-title {
+            font-size: 18px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .category-list li {
+            margin-bottom: 12px;
+        }
+
+        .category-list a {
+            display: flex;
+            justify-content: space-between;
+            color: var(--text-main);
+            font-size: 15px;
+        }
+
+        .category-list a:hover {
+            color: var(--primary-color);
+        }
+
+        .count {
+            background: #eee;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 12px;
+            color: #888;
+        }
+
+        /* Quote Widget */
+        .quote-box {
+            background: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 30px;
+            border-radius: var(--border-radius);
+        }
+
+        .quote-text {
+            font-style: italic;
+            font-size: 16px;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .quote-author {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background: white;
+            padding: 60px 0;
+            margin-top: 60px;
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .faq-item {
+            border: 1px solid #eee;
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .faq-item h4 {
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+
+        .faq-item p {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: #bdc3c7;
+            padding: 50px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .article-item {
+                flex-direction: column;
+            }
+
+            .article-thumb {
+                width: 100%;
+                height: 200px;
+            }
+
+            nav {
+                display: none; /* Simplified for mobile */
+            }
+            
+            .header-inner {
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <span>独生女</span>的故事
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">成长故事</a></li>
+                    <li><a href="#">亲情感悟</a></li>
+                    <li><a href="#">心理探讨</a></li>
+                    <li><a href="#">专栏作家</a></li>
+                </ul>
+            </nav>
+            <button class="search-btn" aria-label="搜索">🔍</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>独生女的故事</h1>
+                <p>在这里，我们记录每一个独生子女独特的成长轨迹，探讨家庭关系、自我探索与未来的无限可能。</p>
+            </div>
+        </section>
+
+        <div class="container main-content">
+            <!-- Left Column: Content -->
+            <div class="content-column">
+                
+                <!-- Featured Article -->
+                <article class="featured-card">
+                    <div class="featured-image"></div>
+                    <div class="featured-content">
+                        <span class="tag">深度特写</span>
+                        <h2>独生子女的“双重责任”：在父母衰老中寻找自我平衡</h2>
+                        <p>随着父母年龄增长，独生子女往往面临着前所未有的养老压力。如何在尽孝与个人生活之间找到平衡点，是当代独生子女必须面对的课题。</p>
+                        <a href="#" class="read-more">阅读全文 &rarr;</a>
+                    </div>
+                </article>
+
+                <div class="section-title">
+                    <span>最新故事</span>
+                </div>
+
+                <div class="article-list">
+                    <article class="article-item">
+                        <div class="article-thumb" style="background-image: url('https://picsum.photos/seed/school/200/150.jpg');"></div>
+                        <div class="article-info">
+                            <h3>那个夏天，我终于理解了父母沉默的爱</h3>
+                            <div class="article-meta">
+                                <span>👤 作者：林晓</span>
+                                <span>📅 2023-10-24</span>
+                            </div>
+                            <p class="article-excerpt">小时候总想逃离家，长大后才发现，家是唯一可以无条件接纳我的地方。回想起小时候父母为了供我读书省吃俭用的细节...</p>
+                        </div>
+                    </article>
+
+                    <article class="article-item">
+                        <div class="article-thumb" style="background-image: url('https://picsum.photos/seed/work/200/150.jpg');"></div>
+                        <div class="article-info">
+                            <h3>独生子女职场生存指南：如何应对孤独感</h3>
+                            <div class="article-meta">
+                                <span>👤 作者：职场观察员</span>
+                                <span>📅 2023-10-22</span>
+                            </div>
+                            <p class="article-excerpt">没有兄弟姐妹的陪伴，下班后的空荡荡的房间该如何度过？分享几个独居独生子女调节情绪、建立社交圈的小技巧。</p>
+                        </div>
+                    </article>
+
+                    <article class="article-item">
+                        <div class="article-thumb" style="background-image: url('https://picsum.photos/seed/travel/200/150.jpg');"></div>
+                        <div class="article-info">
+                            <h3>独自旅行：一个人的冒险与成长</h3>
+                            <div class="article-meta">
+                                <span>👤 作者：背包客阿强</span>
+                                <span>📅 2023-10-20</span>
+                            </div>
+                            <p class="article-excerpt">独生子女往往更早学会独立。独自旅行不仅仅是看风景，更是与自己对话的过程。记录一次难忘的独自西藏之旅。</p>
+                        </div>
+                    </article>
+
+                    <article class="article-item">
+                        <div class="article-thumb" style="background-image: url('https://picsum.photos/seed/family/200/150.jpg');"></div>
+                        <div class="article-info">
+                            <h3>过年回家：独生子女如何应对亲戚的“关心”</h3>
+                            <div class="article-meta">
+                                <span>👤 作者：匿名用户</span>
+                                <span>📅 2023-10-18</span>
+                            </div>
+                            <p class="article-excerpt">每到春节，独生子女总是被各种问题包围：有对象了吗？工资多少？为什么不生二胎？教你高情商应对亲戚的“盘问”。</p>
+                        </div>
+                    </article>
+                </div>
+
+            </div>
+
+            <!-- Right Column: Sidebar -->
+            <aside>
+                <div class="widget">
+                    <h3 class="widget-title">热门话题</h3>
+                    <ul class="category-list">
+                        <li><a href="#">#养老焦虑</a> <span class="count">1.2k</span></li>
+                        <li><a href="#">#原生家庭</a> <span class="count">980</span></li>
+                        <li><a href="#">#独居生活</a> <span class="count">850</span></li>
+                        <li><a href="#">#家庭聚会</a> <span class="count">720</span></li>
+                        <li><a href="#">#职业规划</a> <span class="count">650</span></li>
+                    </ul>
+                </div>
+
+                <div class="widget quote-box">
+                    <p class="quote-text">“独生子女不是孤独，而是拥有了一份独一无二的、完整的爱与责任。”</p>
+                    <p class="quote-author">—— 摘自《独生女的故事》专栏</p>
+                </div>
+
+                <div class="widget">
+                    <h3 class="widget-title">投稿指南</h3>
+                    <p style="font-size: 14px; color: #666; margin-bottom: 15px;">如果你也有关于“独生女的故事”想要分享，欢迎向我们投稿。无论是心路历程还是生活琐事，我们都愿意倾听。</p>
+                    <button style="width: 100%; padding: 10px; background: var(--primary-color); color: white; border: none; border-radius: 6px; cursor: pointer;">立即投稿</button>
+                </div>
+            </aside>
+        </div>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <div class="container">
+                <h2 class="section-title" style="text-align: center; margin-bottom: 40px;">常见问题</h2>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <h4>独生子女心理压力大怎么办？</h4>
+                        <p>独生子女往往承担着更多的家庭责任。建议通过培养兴趣爱好、建立高质量的社交圈子以及寻求专业心理咨询来缓解压力。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>独生子女如何处理父母养老问题？</h4>
+                        <p>需要提前做好财务规划，同时关注父母的身心健康。必要时可以寻求社区养老资源或互助养老模式的支持。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>为什么选择关注“独生女的故事”？</h4>
+                        <p>这是一个专注于独生子女群体情感交流与成长的平台，我们致力于为这一群体提供温暖、理性的内容支持。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <p style="font-size: 14px; line-height: 1.8;">
+                        “独生女的故事”是一个致力于记录和探讨独生子女家庭生活、成长经历与情感世界的网络平台。我们相信每一个独生子女都有属于自己的独特故事。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#">关于平台</a></li>
+                        <li><a href="#">投稿须知</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                        <li><a href="#">联系我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>友情链接</h4>
+                    <ul>
+                        <li><a href="#">心理健康网</a></li>
+                        <li><a href="#">家庭关系研究</a></li>
+                        <li><a href="#">城市独居生活</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 独生女的故事 版权所有.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
