@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="警花劫在线阅读平台，提供热门警匪题材漫画、小说与影视作品的最新更新与高清资源。包含角色档案、剧情解析及阅读指南。">
+    <meta name="keywords" content="警花劫,警匪漫画,警匪小说,在线阅读,漫画推荐">
+    <title>警花劫-热门警匪题材漫画与小说阅读平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #1a1a2e;
+            --secondary-color: #16213e;
+            --accent-color: #e94560;
+            --text-color: #e0e0e0;
+            --text-muted: #a0a0a0;
+            --card-bg: #0f3460;
+            --border-radius: 8px;
+            --spacing-unit: 1rem;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--accent-color);
+            padding-left: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(15, 52, 96, 0.95);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--accent-color);
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: #fff;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        .search-bar {
+            display: flex;
+            background: rgba(0,0,0,0.2);
+            border-radius: 20px;
+            padding: 5px 15px;
+        }
+
+        .search-bar input {
+            background: transparent;
+            border: none;
+            color: #fff;
+            outline: none;
+            width: 150px;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(to right, rgba(26,26,46,0.9), rgba(26,26,46,0.4)), url('https://picsum.photos/seed/cyberpolice/1920/600') no-repeat center center/cover;
+            margin-bottom: 2rem;
+        }
+
+        .hero-content {
+            max-width: 600px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: #ccc;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 25px;
+            background-color: var(--accent-color);
+            color: white;
+            border-radius: 4px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #ff2e4d;
+            transform: translateY(-2px);
+        }
+
+        /* Category Grid */
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .category-card {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            text-align: center;
+            border-radius: var(--border-radius);
+            transition: transform 0.3s;
+            border: 1px solid transparent;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+        }
+
+        .category-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Content Grid */
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .work-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            transition: box-shadow 0.3s;
+        }
+
+        .work-card:hover {
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+
+        .work-cover {
+            height: 280px;
+            width: 100%;
+            object-fit: cover;
+            background-color: #333;
+        }
+
+        .work-info {
+            padding: 1rem;
+        }
+
+        .work-title {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .work-meta {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+
+        .work-tags span {
+            font-size: 0.75rem;
+            background: rgba(233, 69, 96, 0.2);
+            color: var(--accent-color);
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        /* Character Section */
+        .character-section {
+            background: var(--secondary-color);
+            padding: 3rem 0;
+            margin-bottom: 3rem;
+        }
+
+        .char-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        .char-card {
+            text-align: center;
+            width: 200px;
+        }
+
+        .char-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 3px solid var(--accent-color);
+            margin-bottom: 1rem;
+            object-fit: cover;
+        }
+
+        .char-name {
+            font-size: 1.1rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .char-role {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            max-width: 800px;
+            margin: 0 auto 3rem;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            margin-bottom: 1rem;
+        }
+
+        .faq-question {
+            padding: 1rem 0;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+        }
+
+        .faq-answer {
+            padding-bottom: 1rem;
+            color: var(--text-muted);
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0b1021;
+            padding: 3rem 0;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .footer-links {
+            margin-bottom: 1rem;
+        }
+
+        .footer-links a {
+            margin: 0 10px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 1rem 0;
+            }
+            nav ul {
+                margin: 1rem 0;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero {
+                height: 400px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">警花<span>劫</span></a>
+            <nav>
+                <ul>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">漫画</a></li>
+                    <li><a href="#">小说</a></li>
+                    <li><a href="#">影视</a></li>
+                    <li><a href="#">排行榜</a></li>
+                </ul>
+            </nav>
+            <div class="search-bar">
+                <input type="text" placeholder="搜索作品...">
+                <span>🔍</span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>警花劫：都市迷雾中的正义抉择</h1>
+                    <p>深入警匪题材的悬疑世界，见证警花在危机四伏的都市丛林中，如何以智慧与勇气守护安宁。汇集最新热门漫画、连载小说与深度影评。</p>
+                    <a href="#" class="btn">开始阅读</a>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <!-- Categories -->
+            <section>
+                <div class="category-grid">
+                    <div class="category-card">
+                        <div class="category-icon">🕵️‍♀️</div>
+                        <h3>刑侦悬疑</h3>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-icon">👮‍♀️</div>
+                        <h3>警匪动作</h3>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-icon">🔫</div>
+                        <h3>枪战火拼</h3>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-icon">💔</div>
+                        <h3>情感纠葛</h3>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-icon">⚖️</div>
+                        <h3>法庭风云</h3>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Featured Works -->
+            <section>
+                <div class="section-title">
+                    <h2>热门推荐</h2>
+                    <a href="#" style="font-size: 0.9rem; color: var(--accent-color);">查看更多 &gt;</a>
+                </div>
+                <div class="content-grid">
+                    <article class="work-card">
+                        <img src="https://picsum.photos/seed/police1/300/400" alt="封面图" class="work-cover">
+                        <div class="work-info">
+                            <h3 class="work-title">红妆警探：破晓行动</h3>
+                            <div class="work-meta">
+                                <span>类型：刑侦/言情</span>
+                                <span>连载中</span>
+                            </div>
+                            <p style="font-size: 0.85rem; color: #ccc; margin-bottom: 0.5rem; line-height: 1.4;">女警苏青在一次跨国贩毒案中意外卷入黑暗漩涡，为了查清真相，她不得不与高智商罪犯展开智斗。</p>
+                            <div class="work-tags">
+                                <span>#热血</span> <span>#智斗</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="work-card">
+                        <img src="https://picsum.photos/seed/police2/300/400" alt="封面图" class="work-cover">
+                        <div class="work-info">
+                            <h3 class="work-title">午夜追踪：都市传说</h3>
+                            <div class="work-meta">
+                                <span>类型：惊悚/悬疑</span>
+                                <span>已完结</span>
+                            </div>
+                            <p style="font-size: 0.85rem; color: #ccc; margin-bottom: 0.5rem; line-height: 1.4;">连环杀手在雨夜留下只有警花能读懂的暗号，随着调查深入，隐藏在警队内部的秘密逐渐浮出水面。</p>
+                            <div class="work-tags">
+                                <span>#惊悚</span> <span>#反转</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="work-card">
+                        <img src="https://picsum.photos/seed/police3/300/400" alt="封面图" class="work-cover">
+                        <div class="work-info">
+                            <h3 class="work-title">霓虹下的枪火</h3>
+                            <div class="work-meta">
+                                <span>类型：动作/剧情</span>
+                                <span>连载中</span>
+                            </div>
+                            <p style="font-size: 0.85rem; color: #ccc; margin-bottom: 0.5rem; line-height: 1.4;">卧底警员深入黑帮内部，在黑白两道之间艰难求生，每一秒都可能是生命的终点。</p>
+                            <div class="work-tags">
+                                <span>#动作</span> <span>#卧底</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="work-card">
+                        <img src="https://picsum.photos/seed/police4/300/400" alt="封面图" class="work-cover">
+                        <div class="work-info">
+                            <h3 class="work-title">沉默的证人</h3>
+                            <div class="work-meta">
+                                <span>类型：推理/法庭</span>
+                                <span>连载中</span>
+                            </div>
+                            <p style="font-size: 0.85rem; color: #ccc; margin-bottom: 0.5rem; line-height: 1.4;">看似完美的犯罪现场，却因为一个不起眼的细节被警花识破。法庭上的唇枪舌战一触即发。</p>
+                            <div class="work-tags">
+                                <span>#推理</span> <span>#法庭</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Character Spotlight -->
+            <section class="character-section">
+                <div class="container">
+                    <div class="section-title">
+                        <h2>经典角色档案</h2>
+                    </div>
+                    <div class="char-list">
+                        <div class="char-card">
+                            <img src="https://picsum.photos/seed/char1/200/200" alt="角色头像" class="char-avatar">
+                            <h3 class="char-name">林雨萱</h3>
+                            <p class="char-role">刑侦支队队长 / 智商180</p>
+                        </div>
+                        <div class="char-card">
+                            <img src="https://picsum.photos/seed/char2/200/200" alt="角色头像" class="char-avatar">
+                            <h3 class="char-name">陈锋</h3>
+                            <p class="char-role">特警突击手 / 隐忍坚毅</p>
+                        </div>
+                        <div class="char-card">
+                            <img src="https://picsum.photos/seed/char3/200/200" alt="角色头像" class="char-avatar">
+                            <h3 class="char-name">苏婉儿</h3>
+                            <p class="char-role">法医 / 冷静理智</p>
+                        </div>
+                        <div class="char-card">
+                            <img src="https://picsum.photos/seed/char4/200/200" alt="角色头像" class="char-avatar">
+                            <h3 class="char-name">黑蛇</h3>
+                            <p class="char-role">头号反派 / 心理变态</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ Section -->
+            <section class="faq-section">
+                <div class="section-title">
+                    <h2>阅读指南</h2>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">如何开始阅读《警花劫》系列作品？</div>
+                    <div class="faq-answer">您可以点击首页的“热门推荐”栏目，直接点击任意作品封面进入阅读页面。支持电脑端和移动端在线浏览。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">这些作品是官方正版资源吗？</div>
+                    <div class="faq-answer">本站致力于提供正版授权的漫画、小说与影视作品，所有内容均经过版权方审核，请放心阅读。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">更新频率是怎样的？</div>
+                    <div class="faq-answer">我们保持每周3-5次的更新频率，热门作品通常会在发布后24小时内同步上线。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">支持下载阅读吗？</div>
+                    <div class="faq-answer">目前支持在线阅读。如需离线功能，建议使用支持离线缓存的阅读器或关注官方APP版本发布。</div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#">关于我们</a>
+                <a href="#">版权声明</a>
+                <a href="#">联系方式</a>
+                <a href="#">用户协议</a>
+            </div>
+            <p>&copy; 2023 警花劫在线阅读平台. All Rights Reserved.</p>
+            <p style="font-size: 0.8rem; margin-top: 10px; color: #555;">本站内容仅供学习交流，请勿用于商业用途。</p>
+        </div>
+    </footer>
+
+    <script>
+        // 简单的 FAQ 交互逻辑
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                item.querySelector('.faq-question').addEventListener('click', () => {
+                    // 关闭其他打开的项
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // 切换当前项
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
